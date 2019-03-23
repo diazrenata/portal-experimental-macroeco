@@ -1,11 +1,11 @@
 ######## This is where the code for ms 12-0370R2 lives
-######## "An experimental test of the response of macroecological patterns…”
+######## "An experimental test of the response of macroecological patterns??
 ######## Supp, Xiao, Ernest and White, Ecology, 2013, doi: 10.1890/12-0370.1
 ######## Code written by Sarah R. Supp and Xiao Xiao
 
 # set working directory
-wd = "pathname"
-setwd(wd)
+# wd = "pathname"
+# setwd(wd)
 
 #import source code that contains the functions necessary to clean the code, generate the macroecological
 #patterns, grab the parameters of interest, run the statistical analyses, and to generate the figures used
@@ -170,9 +170,9 @@ FDR_equi(as.numeric(c(winter_s, winter_n))) #0
 
 
 ##### SADs
-#The maximum likelihood (MLE) of the Poisson log-normal parameters, µ (mean) and s (standard deviation), 
-#were estimated with R function “poilogMLE” from package “poilog” (Grøtan & Engen 2008). 
-#Since µ took both positive and negative values, we used its exponentiated form, exp (µ).
+#The maximum likelihood (MLE) of the Poisson log-normal parameters, ? (mean) and s (standard deviation), 
+#were estimated with R function ?poilogMLE? from package ?poilog? (Gr?tan & Engen 2008). 
+#Since ? took both positive and negative values, we used its exponentiated form, exp (?).
 # linear mixed effects models
 
 # mu and sigma
@@ -318,7 +318,7 @@ dev.off()
 ########## FIGURE 2: Statistical differences among the parameters were only detected in the winter annual ##########
 # community when experimental manipulation (C = control, K = kangaroo rat removal, R = total rodent removal)
 # also impacted species richness and total abundance. Top panels display results from standard statistical
-# tests (linear mixed effects models - SAD, SAR; ANOVA – STR) for significant differences and lower panels
+# tests (linear mixed effects models - SAD, SAR; ANOVA ? STR) for significant differences and lower panels
 # display results from equivalence tests. Points represent the mean difference in parameter estimation 
 # between two treatments, and whiskers indicate 95% confidence intervals (CIs; top) and 90% CI (bottom) of
 # the difference in parameter estimates. Because parameter estimates differ in magnitude for different 
