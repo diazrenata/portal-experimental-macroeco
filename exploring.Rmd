@@ -1,0 +1,70 @@
+---
+title: "exploring"
+author: "Renata Diaz"
+date: "3/23/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#import source code that contains the functions necessary to clean the code, generate the macroecological
+#patterns, grab the parameters of interest, run the statistical analyses, and to generate the figures used
+#in the manuscript.
+source("PortalPlants_fxns.R")
+
+```
+
+## get plant data
+
+```{r get data}
+
+
+# load winter and summer annual plant data and subset out bad data
+winter = read.csv("PortalWinterAnnuals_1995_2009.csv")
+winter = subset(winter, plot!=1 & plot!=9 & plot!=24)   #omit spectabs removal (1,9) and misshapen plot (24)
+
+summer = read.csv("PortalSummerAnnuals_1995_2009.csv")
+summer = subset(summer, plot!=1 & plot!=9 & plot!=24)   #omit spectabs removal (1,9) and misshapen plot (24)
+
+# add spatial areas needed to get averages for SARs
+winter_new = add_areas(winter)
+summer_new = add_areas(summer)
+  summer_new = subset(summer_new, year != 1997 & year != 1998) # yrs where Unid Spp > 10% community
+```
+  
+  
+## SADs from data
+
+```{r get SADs}
+
+########## MACROECOLOGICAL PATTERNS ##########
+##### The below functions summarize the plant community data, construct the three macroecological patterns,
+##### and get the parameters used to characterize each pattern as output for analysis
+
+##### RADs
+# reshape data for analysis
+winter_wide = reshape_data(winter_new)
+summer_wide = reshape_data(summer_new)
+
+#get descriptive parameters for SADs for each plot-year combination
+years = c(1995:2009)
+winter_rad = RAD_data(winter_wide, years) #returns all the parameters
+summer_rad = RAD_data(summer_wide, years) 
+
+```
+
+## get logseries null from METE
+
+Using `disturbancemete`...?
+
+```{r disturbancemete logseries null}
+library(disturbancemete)
+
+```
+
+## compute deviations from logseries null
+
+## explore the feasible set?
+
+## compute deviations from feasible set?
